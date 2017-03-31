@@ -1,0 +1,1687 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CarFleetModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="id_companytype" Type="int" />
+    <Property Name="id_company" Type="int" />
+    <Property Name="cif" Type="nvarchar" MaxLength="50" />
+    <Property Name="address" Type="nvarchar" MaxLength="50" />
+    <Property Name="phone_number" Type="nvarchar" MaxLength="50" />
+    <Property Name="fax_number" Type="nvarchar" MaxLength="50" />
+    <Property Name="email_address" Type="nvarchar" MaxLength="50" />
+    <Property Name="registry_date_time" Type="datetime2" Precision="7" />
+    <Property Name="map_address" Type="nvarchar(max)" />
+    <Property Name="events_email_address" Type="nvarchar" MaxLength="50" />
+    <Property Name="id_drivingrulesconfiguration" Type="int" />
+    <Property Name="id_platform_service" Type="int" />
+  </EntityType>
+  <EntityType Name="CompanyType">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="company_category" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DefaultMaintenanceOperation">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Device">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_vehicle" Type="int" />
+    <Property Name="id_company" Type="int" />
+    <Property Name="id_devicemodel" Type="int" />
+    <Property Name="id_sim" Type="int" />
+    <Property Name="system_id" Type="nvarchar" MaxLength="50" />
+    <Property Name="IMEI" Type="nvarchar" MaxLength="50" />
+    <Property Name="phone_number" Type="nvarchar" MaxLength="50" />
+    <Property Name="ip_address" Type="nvarchar" MaxLength="50" />
+    <Property Name="ip_port" Type="int" />
+    <Property Name="keep_alive_date_time" Type="datetime2" Precision="7" />
+    <Property Name="location_string" Type="nvarchar(max)" />
+    <Property Name="gps_date_time" Type="datetime2" Precision="7" />
+    <Property Name="latitude" Type="float" />
+    <Property Name="longitude" Type="float" />
+    <Property Name="fix_quality" Type="int" />
+    <Property Name="satellites_in_use" Type="int" />
+    <Property Name="satellites_in_view" Type="int" />
+    <Property Name="hdop" Type="float" />
+    <Property Name="vdop" Type="float" />
+    <Property Name="pdop" Type="float" />
+    <Property Name="altitude" Type="float" />
+    <Property Name="course" Type="float" />
+    <Property Name="speed" Type="float" />
+    <Property Name="activity" Type="int" />
+    <Property Name="total_gps_odometer" Type="float" />
+    <Property Name="partial_gps_odometer" Type="float" />
+    <Property Name="engine_state" Type="bit" />
+    <Property Name="gpdi_1" Type="bit" />
+    <Property Name="gpdi_2" Type="bit" />
+    <Property Name="gpdi_3" Type="bit" />
+    <Property Name="gpdi_4" Type="bit" />
+    <Property Name="gpai_1" Type="int" />
+    <Property Name="gpai_2" Type="int" />
+    <Property Name="location_source" Type="int" />
+    <Property Name="battery_level" Type="int" />
+    <Property Name="battery_charging" Type="bit" />
+    <Property Name="activity_time" Type="int" />
+    <Property Name="vehicle_vin" Type="nvarchar" MaxLength="50" />
+    <Property Name="road_max_speed" Type="int" />
+  </EntityType>
+  <EntityType Name="Device_Services">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_device" Type="int" />
+    <Property Name="id_service" Type="int" />
+  </EntityType>
+  <EntityType Name="DeviceModel">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="manufacturer" Type="nvarchar" MaxLength="50" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DeviceStatus">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_device" Type="int" />
+    <Property Name="ip_address" Type="nvarchar" MaxLength="50" />
+    <Property Name="ip_port" Type="int" />
+    <Property Name="reception_date_time" Type="datetime2" Precision="7" />
+    <Property Name="gps_date_time" Type="datetime2" Precision="7" />
+    <Property Name="location_string" Type="nvarchar(max)" />
+    <Property Name="latitude" Type="float" />
+    <Property Name="longitude" Type="float" />
+    <Property Name="fix_quality" Type="int" />
+    <Property Name="satellites_in_use" Type="int" />
+    <Property Name="satellites_in_view" Type="int" />
+    <Property Name="hdop" Type="float" />
+    <Property Name="vdop" Type="float" />
+    <Property Name="pdop" Type="float" />
+    <Property Name="altitude" Type="float" />
+    <Property Name="course" Type="float" />
+    <Property Name="speed" Type="float" />
+    <Property Name="activity" Type="int" />
+    <Property Name="total_gps_odometer" Type="float" />
+    <Property Name="partial_gps_odometer" Type="float" />
+    <Property Name="engine_state" Type="bit" />
+    <Property Name="gpdi_1" Type="bit" />
+    <Property Name="gpdi_2" Type="bit" />
+    <Property Name="gpdi_3" Type="bit" />
+    <Property Name="gpdi_4" Type="bit" />
+    <Property Name="gpai_1" Type="int" />
+    <Property Name="gpai_2" Type="int" />
+    <Property Name="location_source" Type="int" />
+    <Property Name="battery_level" Type="int" />
+    <Property Name="activity_time" Type="int" />
+    <Property Name="road_max_speed" Type="int" />
+    <Property Name="vehicle_vin" Type="nvarchar" MaxLength="50" />
+    <Property Name="engine_rpm" Type="int" />
+    <Property Name="utc_gps_date_time" Type="datetime2" Precision="7" />
+  </EntityType>
+  <EntityType Name="Driver">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="surname" Type="nvarchar" MaxLength="50" />
+    <Property Name="id_company" Type="int" />
+    <Property Name="personal_id" Type="nvarchar" MaxLength="50" />
+    <Property Name="image" Type="nvarchar" MaxLength="50" />
+    <Property Name="phone_number" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DrivingRulesConfiguration">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="speed_limit" Type="int" />
+    <Property Name="daily_driving_time_limit" Type="int" />
+    <Property Name="daily_minimum_driving_time" Type="int" />
+    <Property Name="daily_distance_limit" Type="int" />
+    <Property Name="daily_minimum_distance" Type="int" />
+    <Property Name="rpm_limit" Type="int" />
+  </EntityType>
+  <EntityType Name="Event">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_device" Type="int" />
+    <Property Name="id_devicestatus" Type="int" />
+    <Property Name="id_eventtype" Type="int" />
+    <Property Name="reception_date_time" Type="datetime2" Precision="7" />
+    <Property Name="id_parameter" Type="int" />
+    <Property Name="email_sent" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="EventPolicy">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_event_type" Type="int" />
+    <Property Name="e_mail" Type="bit" />
+    <Property Name="id_user" Type="int" />
+  </EntityType>
+  <EntityType Name="EventType">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Fleet">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_company" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="image" Type="nvarchar" MaxLength="50" />
+    <Property Name="id_timezone" Type="int" />
+  </EntityType>
+  <EntityType Name="Fleet_FleetFeatures">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_fleet" Type="int" />
+    <Property Name="id_fleetfeature" Type="int" />
+  </EntityType>
+  <EntityType Name="FleetFeatures">
+    <Key>
+      <PropertyRef Name="FleetFeatureId" />
+    </Key>
+    <Property Name="FleetFeatureId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FleetFeatureName" Type="nvarchar" MaxLength="50" />
+    <Property Name="FleetFeatureCode" Type="int" />
+    <Property Name="FleetFeatureData" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="GangwayServiceFrames">
+    <Key>
+      <PropertyRef Name="FrameId" />
+    </Key>
+    <Property Name="FrameId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FrameData" Type="nvarchar(max)" />
+    <Property Name="FrameSent" Type="bit" />
+    <Property Name="InsertionDateTime" Type="datetime2" Precision="7" />
+    <Property Name="SendingDateTime" Type="datetime2" Precision="7" />
+    <Property Name="ServiceId" Type="int" />
+    <Property Name="ExtraData" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Language">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="hashkey" Type="nvarchar" MaxLength="50" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MainData">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="server_ip_address" Type="nvarchar" MaxLength="50" />
+    <Property Name="platform_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="events_mail_sender" Type="nvarchar" MaxLength="50" />
+    <Property Name="host" Type="nvarchar" MaxLength="50" />
+    <Property Name="port" Type="int" />
+    <Property Name="password" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MaintenanceOperation">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MaintenanceOperation_Company">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_company" Type="int" />
+    <Property Name="id_maintenanceoperation" Type="int" />
+  </EntityType>
+  <EntityType Name="MaintenanceOperation_Vehicle">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_vehicle" Type="int" />
+    <Property Name="id_maintenanceoperation" Type="int" />
+    <Property Name="distance_notification" Type="int" />
+    <Property Name="time_notification" Type="int" />
+    <Property Name="current_distance" Type="int" />
+    <Property Name="starting_time" Type="datetime2" Precision="7" />
+    <Property Name="maintenance_performed" Type="bit" />
+    <Property Name="performing_time" Type="datetime2" Precision="7" />
+    <Property Name="notification_sent" Type="bit" />
+  </EntityType>
+  <EntityType Name="PendingCommand">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_device" Type="int" />
+    <Property Name="command" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="PlatformServices">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Poi">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_poitype" Type="int" />
+    <Property Name="id_company" Type="int" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="latitude" Type="float" />
+    <Property Name="longitude" Type="float" />
+    <Property Name="notes" Type="nvarchar(max)" />
+    <Property Name="radius" Type="int" />
+    <Property Name="id_polygon" Type="int" />
+  </EntityType>
+  <EntityType Name="Point">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="latitude" Type="float" />
+    <Property Name="longitude" Type="float" />
+  </EntityType>
+  <EntityType Name="PoiType">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="image" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Polygon">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Polygon_Point">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_polygon" Type="int" />
+    <Property Name="id_point" Type="int" />
+  </EntityType>
+  <EntityType Name="Route">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_device" Type="int" />
+    <Property Name="gps_date_time_start" Type="datetime2" Precision="7" />
+    <Property Name="gps_date_time_end" Type="datetime2" Precision="7" />
+    <Property Name="id_devicestatus_start" Type="int" />
+    <Property Name="id_devicestatus_end" Type="int" />
+    <Property Name="distance" Type="float" />
+    <Property Name="average_speed" Type="float" />
+    <Property Name="start_address" Type="nvarchar(max)" />
+    <Property Name="end_address" Type="nvarchar(max)" />
+    <Property Name="fuel_consumption" Type="float" />
+    <Property Name="start_address_completed" Type="bit" />
+    <Property Name="end_address_completed" Type="bit" />
+  </EntityType>
+  <EntityType Name="SecurityRoute">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar(max)" />
+    <Property Name="id_company" Type="int" />
+  </EntityType>
+  <EntityType Name="SecurityRoute_Point">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_securityroute" Type="int" />
+    <Property Name="id_point" Type="int" />
+    <Property Name="route_point_order" Type="int" />
+    <Property Name="is_stop" Type="bit" />
+    <Property Name="stop_time" Type="int" />
+  </EntityType>
+  <EntityType Name="SecurityRoute_Vehicle">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_securityroute" Type="int" />
+    <Property Name="id_vehicle" Type="int" />
+    <Property Name="time_control" Type="bit" />
+    <Property Name="start_time" Type="datetime2" Precision="7" />
+    <Property Name="end_time" Type="datetime2" Precision="7" />
+    <Property Name="stop_control" Type="bit" />
+    <Property Name="status" Type="int" />
+    <Property Name="id_securityroute_point" Type="int" />
+    <Property Name="start_delay_event_raised" Type="bit" />
+    <Property Name="end_delay_event_raised" Type="bit" />
+    <Property Name="id_securityroute_point_next_stop" Type="int" />
+  </EntityType>
+  <EntityType Name="Services">
+    <Key>
+      <PropertyRef Name="ServiceId" />
+    </Key>
+    <Property Name="ServiceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ServiceName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ServiceCode" Type="int" />
+    <Property Name="ServiceData" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Sim">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="operator" Type="nvarchar" MaxLength="50" />
+    <Property Name="number" Type="nvarchar" MaxLength="50" />
+    <Property Name="icc" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TimeZones">
+    <Key>
+      <PropertyRef Name="TimeZoneId" />
+    </Key>
+    <Property Name="TimeZoneId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TimeZoneCode" Type="int" />
+    <Property Name="TimeZoneInfoIdentifier" Type="nvarchar(max)" />
+    <Property Name="TimeZoneName" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_usertype" Type="int" />
+    <Property Name="id_company" Type="int" />
+    <Property Name="id_language" Type="int" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="login" Type="nvarchar" MaxLength="50" />
+    <Property Name="password" Type="nvarchar" MaxLength="50" />
+    <Property Name="sign_in_date" Type="datetime2" Precision="7" />
+    <Property Name="expiration_date" Type="datetime2" Precision="7" />
+    <Property Name="events_email_address" Type="nvarchar" MaxLength="50" />
+    <Property Name="gcm_registration_id" Type="nvarchar" MaxLength="255" />
+    <Property Name="gcm_registration_device" Type="nvarchar" MaxLength="255" />
+    <Property Name="surname" Type="nvarchar" MaxLength="50" />
+    <Property Name="validation_code" Type="nvarchar" MaxLength="255" />
+    <Property Name="user_validated" Type="bit" />
+  </EntityType>
+  <EntityType Name="User_Fleet">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_user" Type="int" Nullable="false" />
+    <Property Name="id_fleet" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserLogin">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_user" Type="int" />
+    <Property Name="login_date_time" Type="datetime2" Precision="7" />
+    <Property Name="platform" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="UserType">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_category" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Vehicle">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_company" Type="int" />
+    <Property Name="id_fleet" Type="int" />
+    <Property Name="id_vehicletype" Type="int" />
+    <Property Name="id_driver" Type="int" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="make" Type="nvarchar" MaxLength="50" />
+    <Property Name="model" Type="nvarchar" MaxLength="50" />
+    <Property Name="year" Type="int" />
+    <Property Name="plate" Type="nvarchar" MaxLength="50" />
+    <Property Name="odometer" Type="float" />
+    <Property Name="image" Type="nvarchar(max)" />
+    <Property Name="color" Type="nvarchar" MaxLength="50" />
+    <Property Name="chassis_number" Type="nvarchar" MaxLength="50" />
+    <Property Name="factory_color" Type="nvarchar" MaxLength="50" />
+    <Property Name="registry_date_time" Type="datetime2" Precision="7" />
+    <Property Name="installation_date_time" Type="datetime2" Precision="7" />
+  </EntityType>
+  <EntityType Name="Vehicle_Poi">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_vehicle" Type="int" />
+    <Property Name="id_poi" Type="int" />
+  </EntityType>
+  <EntityType Name="Vehicle_WeekDay">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_vehicle" Type="int" />
+    <Property Name="id_weekday" Type="int" />
+    <Property Name="allowed" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="VehicleType">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="image" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WeekDay">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="day_name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_Company_Company">
+    <End Role="Company" Type="Self.Company" Multiplicity="1" />
+    <End Role="Company1" Type="Self.Company" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Company1">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Company_CompanyType">
+    <End Role="CompanyType" Type="Self.CompanyType" Multiplicity="0..1" />
+    <End Role="Company" Type="Self.Company" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CompanyType">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Company">
+        <PropertyRef Name="id_companytype" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Company_DrivingRulesConfiguration">
+    <End Role="DrivingRulesConfiguration" Type="Self.DrivingRulesConfiguration" Multiplicity="0..1" />
+    <End Role="Company" Type="Self.Company" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DrivingRulesConfiguration">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Company">
+        <PropertyRef Name="id_drivingrulesconfiguration" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Company_PlatformServices">
+    <End Role="PlatformServices" Type="Self.PlatformServices" Multiplicity="0..1" />
+    <End Role="Company" Type="Self.Company" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PlatformServices">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Company">
+        <PropertyRef Name="id_platform_service" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Device_Company">
+    <End Role="Company" Type="Self.Company" Multiplicity="0..1" />
+    <End Role="Device" Type="Self.Device" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Device">
+        <PropertyRef Name="id_company" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Device_DeviceModel">
+    <End Role="DeviceModel" Type="Self.DeviceModel" Multiplicity="0..1" />
+    <End Role="Device" Type="Self.Device" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DeviceModel">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Device">
+        <PropertyRef Name="id_devicemodel" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Device_Services_Device">
+    <End Role="Device" Type="Self.Device" Multiplicity="0..1" />
+    <End Role="Device_Services" Type="Self.Device_Services" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Device">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Device_Services">
+        <PropertyRef Name="id_device" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Device_Services_Services">
+    <End Role="Services" Type="Self.Services" Multiplicity="0..1" />
+    <End Role="Device_Services" Type="Self.Device_Services" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Services">
+        <PropertyRef Name="ServiceId" />
+      </Principal>
+      <Dependent Role="Device_Services">
+        <PropertyRef Name="id_service" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Device_Sim">
+    <End Role="Sim" Type="Self.Sim" Multiplicity="0..1" />
+    <End Role="Device" Type="Self.Device" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sim">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Device">
+        <PropertyRef Name="id_sim" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Device_Vehicle">
+    <End Role="Vehicle" Type="Self.Vehicle" Multiplicity="0..1" />
+    <End Role="Device" Type="Self.Device" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vehicle">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Device">
+        <PropertyRef Name="id_vehicle" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DeviceStatus_Device">
+    <End Role="Device" Type="Self.Device" Multiplicity="0..1" />
+    <End Role="DeviceStatus" Type="Self.DeviceStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Device">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="DeviceStatus">
+        <PropertyRef Name="id_device" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Driver_Company">
+    <End Role="Company" Type="Self.Company" Multiplicity="0..1" />
+    <End Role="Driver" Type="Self.Driver" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Driver">
+        <PropertyRef Name="id_company" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Event_Device">
+    <End Role="Device" Type="Self.Device" Multiplicity="0..1" />
+    <End Role="Event" Type="Self.Event" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Device">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Event">
+        <PropertyRef Name="id_device" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Event_DeviceStatus">
+    <End Role="DeviceStatus" Type="Self.DeviceStatus" Multiplicity="0..1" />
+    <End Role="Event" Type="Self.Event" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DeviceStatus">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Event">
+        <PropertyRef Name="id_devicestatus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Event_EventType">
+    <End Role="EventType" Type="Self.EventType" Multiplicity="0..1" />
+    <End Role="Event" Type="Self.Event" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EventType">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Event">
+        <PropertyRef Name="id_eventtype" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EventPolicy_EventType">
+    <End Role="EventType" Type="Self.EventType" Multiplicity="0..1" />
+    <End Role="EventPolicy" Type="Self.EventPolicy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EventType">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="EventPolicy">
+        <PropertyRef Name="id_event_type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EventPolicy_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="EventPolicy" Type="Self.EventPolicy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="EventPolicy">
+        <PropertyRef Name="id_user" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fleet_Company">
+    <End Role="Company" Type="Self.Company" Multiplicity="1" />
+    <End Role="Fleet" Type="Self.Fleet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Fleet">
+        <PropertyRef Name="id_company" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fleet_FleetFeatures_Fleet">
+    <End Role="Fleet" Type="Self.Fleet" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Fleet_FleetFeatures" Type="Self.Fleet_FleetFeatures" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fleet">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Fleet_FleetFeatures">
+        <PropertyRef Name="id_fleet" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fleet_FleetFeatures_FleetFeatures">
+    <End Role="FleetFeatures" Type="Self.FleetFeatures" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Fleet_FleetFeatures" Type="Self.Fleet_FleetFeatures" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FleetFeatures">
+        <PropertyRef Name="FleetFeatureId" />
+      </Principal>
+      <Dependent Role="Fleet_FleetFeatures">
+        <PropertyRef Name="id_fleetfeature" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GangwayServiceFrames_Services">
+    <End Role="Services" Type="Self.Services" Multiplicity="0..1" />
+    <End Role="GangwayServiceFrames" Type="Self.GangwayServiceFrames" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Services">
+        <PropertyRef Name="ServiceId" />
+      </Principal>
+      <Dependent Role="GangwayServiceFrames">
+        <PropertyRef Name="ServiceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MaintenanceOperation_Company_Company">
+    <End Role="Company" Type="Self.Company" Multiplicity="0..1" />
+    <End Role="MaintenanceOperation_Company" Type="Self.MaintenanceOperation_Company" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="MaintenanceOperation_Company">
+        <PropertyRef Name="id_company" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MaintenanceOperation_Company_MaintenanceOperation">
+    <End Role="MaintenanceOperation" Type="Self.MaintenanceOperation" Multiplicity="0..1" />
+    <End Role="MaintenanceOperation_Company" Type="Self.MaintenanceOperation_Company" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MaintenanceOperation">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="MaintenanceOperation_Company">
+        <PropertyRef Name="id_maintenanceoperation" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MaintenanceOperation_Vehicle_MaintenanceOperation">
+    <End Role="MaintenanceOperation" Type="Self.MaintenanceOperation" Multiplicity="0..1" />
+    <End Role="MaintenanceOperation_Vehicle" Type="Self.MaintenanceOperation_Vehicle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MaintenanceOperation">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="MaintenanceOperation_Vehicle">
+        <PropertyRef Name="id_maintenanceoperation" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MaintenanceOperation_Vehicle_Vehicle">
+    <End Role="Vehicle" Type="Self.Vehicle" Multiplicity="0..1" />
+    <End Role="MaintenanceOperation_Vehicle" Type="Self.MaintenanceOperation_Vehicle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vehicle">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="MaintenanceOperation_Vehicle">
+        <PropertyRef Name="id_vehicle" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PendingCommand_Device">
+    <End Role="Device" Type="Self.Device" Multiplicity="0..1" />
+    <End Role="PendingCommand" Type="Self.PendingCommand" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Device">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="PendingCommand">
+        <PropertyRef Name="id_device" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Poi_Company">
+    <End Role="Company" Type="Self.Company" Multiplicity="0..1" />
+    <End Role="Poi" Type="Self.Poi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Poi">
+        <PropertyRef Name="id_company" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Poi_PoiType">
+    <End Role="PoiType" Type="Self.PoiType" Multiplicity="0..1" />
+    <End Role="Poi" Type="Self.Poi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PoiType">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Poi">
+        <PropertyRef Name="id_poitype" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Poi_Polygon">
+    <End Role="Polygon" Type="Self.Polygon" Multiplicity="0..1" />
+    <End Role="Poi" Type="Self.Poi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Polygon">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Poi">
+        <PropertyRef Name="id_polygon" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Polygon_Point_Point">
+    <End Role="Point" Type="Self.Point" Multiplicity="0..1" />
+    <End Role="Polygon_Point" Type="Self.Polygon_Point" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Point">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Polygon_Point">
+        <PropertyRef Name="id_point" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Polygon_Point_Polygon">
+    <End Role="Polygon" Type="Self.Polygon" Multiplicity="0..1" />
+    <End Role="Polygon_Point" Type="Self.Polygon_Point" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Polygon">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Polygon_Point">
+        <PropertyRef Name="id_polygon" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Route_Device">
+    <End Role="Device" Type="Self.Device" Multiplicity="0..1" />
+    <End Role="Route" Type="Self.Route" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Device">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Route">
+        <PropertyRef Name="id_device" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Route_DeviceStatusEnd">
+    <End Role="DeviceStatus" Type="Self.DeviceStatus" Multiplicity="0..1" />
+    <End Role="Route" Type="Self.Route" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DeviceStatus">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Route">
+        <PropertyRef Name="id_devicestatus_end" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Route_DeviceStatusStart">
+    <End Role="DeviceStatus" Type="Self.DeviceStatus" Multiplicity="0..1" />
+    <End Role="Route" Type="Self.Route" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DeviceStatus">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Route">
+        <PropertyRef Name="id_devicestatus_start" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SecurityRoute_Company">
+    <End Role="Company" Type="Self.Company" Multiplicity="0..1" />
+    <End Role="SecurityRoute" Type="Self.SecurityRoute" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="SecurityRoute">
+        <PropertyRef Name="id_company" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SecurityRoute_Point_Point">
+    <End Role="Point" Type="Self.Point" Multiplicity="0..1" />
+    <End Role="SecurityRoute_Point" Type="Self.SecurityRoute_Point" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Point">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="SecurityRoute_Point">
+        <PropertyRef Name="id_point" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SecurityRoute_Point_SecurityRoute">
+    <End Role="SecurityRoute" Type="Self.SecurityRoute" Multiplicity="0..1" />
+    <End Role="SecurityRoute_Point" Type="Self.SecurityRoute_Point" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SecurityRoute">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="SecurityRoute_Point">
+        <PropertyRef Name="id_securityroute" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SecurityRoute_Vehicle_SecurityRoute">
+    <End Role="SecurityRoute" Type="Self.SecurityRoute" Multiplicity="0..1" />
+    <End Role="SecurityRoute_Vehicle" Type="Self.SecurityRoute_Vehicle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SecurityRoute">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="SecurityRoute_Vehicle">
+        <PropertyRef Name="id_securityroute" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SecurityRoute_Vehicle_SecurityRoute_Point">
+    <End Role="SecurityRoute_Point" Type="Self.SecurityRoute_Point" Multiplicity="0..1" />
+    <End Role="SecurityRoute_Vehicle" Type="Self.SecurityRoute_Vehicle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SecurityRoute_Point">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="SecurityRoute_Vehicle">
+        <PropertyRef Name="id_securityroute_point" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SecurityRoute_Vehicle_SecurityRoute_Point_Next_Stop">
+    <End Role="SecurityRoute_Point" Type="Self.SecurityRoute_Point" Multiplicity="0..1" />
+    <End Role="SecurityRoute_Vehicle" Type="Self.SecurityRoute_Vehicle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SecurityRoute_Point">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="SecurityRoute_Vehicle">
+        <PropertyRef Name="id_securityroute_point_next_stop" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SecurityRoute_Vehicle_Vehicle">
+    <End Role="Vehicle" Type="Self.Vehicle" Multiplicity="0..1" />
+    <End Role="SecurityRoute_Vehicle" Type="Self.SecurityRoute_Vehicle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vehicle">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="SecurityRoute_Vehicle">
+        <PropertyRef Name="id_vehicle" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Company">
+    <End Role="Company" Type="Self.Company" Multiplicity="0..1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="id_company" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Fleet_Fleet">
+    <End Role="Fleet" Type="Self.Fleet" Multiplicity="1" />
+    <End Role="User_Fleet" Type="Self.User_Fleet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fleet">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="User_Fleet">
+        <PropertyRef Name="id_fleet" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Fleet_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="User_Fleet" Type="Self.User_Fleet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="User_Fleet">
+        <PropertyRef Name="id_user" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Language">
+    <End Role="Language" Type="Self.Language" Multiplicity="0..1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Language">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="id_language" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_UserType">
+    <End Role="UserType" Type="Self.UserType" Multiplicity="0..1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserType">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="id_usertype" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserLogin_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="UserLogin" Type="Self.UserLogin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="UserLogin">
+        <PropertyRef Name="id_user" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vehicle_Company">
+    <End Role="Company" Type="Self.Company" Multiplicity="0..1" />
+    <End Role="Vehicle" Type="Self.Vehicle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Vehicle">
+        <PropertyRef Name="id_company" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vehicle_Driver">
+    <End Role="Driver" Type="Self.Driver" Multiplicity="0..1" />
+    <End Role="Vehicle" Type="Self.Vehicle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Driver">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Vehicle">
+        <PropertyRef Name="id_driver" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vehicle_Fleet">
+    <End Role="Fleet" Type="Self.Fleet" Multiplicity="0..1" />
+    <End Role="Vehicle" Type="Self.Vehicle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fleet">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Vehicle">
+        <PropertyRef Name="id_fleet" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vehicle_Poi_Poi">
+    <End Role="Poi" Type="Self.Poi" Multiplicity="0..1" />
+    <End Role="Vehicle_Poi" Type="Self.Vehicle_Poi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Poi">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Vehicle_Poi">
+        <PropertyRef Name="id_poi" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vehicle_Poi_Vehicle">
+    <End Role="Vehicle" Type="Self.Vehicle" Multiplicity="0..1" />
+    <End Role="Vehicle_Poi" Type="Self.Vehicle_Poi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vehicle">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Vehicle_Poi">
+        <PropertyRef Name="id_vehicle" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vehicle_VehicleType">
+    <End Role="VehicleType" Type="Self.VehicleType" Multiplicity="0..1" />
+    <End Role="Vehicle" Type="Self.Vehicle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VehicleType">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Vehicle">
+        <PropertyRef Name="id_vehicletype" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vehicle_WeekDay_Vehicle">
+    <End Role="Vehicle" Type="Self.Vehicle" Multiplicity="0..1" />
+    <End Role="Vehicle_WeekDay" Type="Self.Vehicle_WeekDay" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vehicle">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Vehicle_WeekDay">
+        <PropertyRef Name="id_vehicle" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vehicle_WeekDay_WeekDay">
+    <End Role="WeekDay" Type="Self.WeekDay" Multiplicity="0..1" />
+    <End Role="Vehicle_WeekDay" Type="Self.Vehicle_WeekDay" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WeekDay">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Vehicle_WeekDay">
+        <PropertyRef Name="id_weekday" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="sp_behaviorEvents" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_device" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_behaviorOdometer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_device" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_behaviorSpeed" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_device" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_CompanyInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="name" Type="nvarchar" Mode="In" />
+    <Parameter Name="companytype" Type="int" Mode="In" />
+    <Parameter Name="company" Type="int" Mode="In" />
+    <Parameter Name="cif" Type="nvarchar" Mode="In" />
+    <Parameter Name="address" Type="nvarchar" Mode="In" />
+    <Parameter Name="phone" Type="nvarchar" Mode="In" />
+    <Parameter Name="fax" Type="nvarchar" Mode="In" />
+    <Parameter Name="email" Type="nvarchar" Mode="In" />
+    <Parameter Name="registry" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_CompanyUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="name" Type="nvarchar" Mode="In" />
+    <Parameter Name="companyType" Type="int" Mode="In" />
+    <Parameter Name="cif" Type="nvarchar" Mode="In" />
+    <Parameter Name="address" Type="nvarchar" Mode="In" />
+    <Parameter Name="phone" Type="nvarchar" Mode="In" />
+    <Parameter Name="fax" Type="nvarchar" Mode="In" />
+    <Parameter Name="email" Type="nvarchar" Mode="In" />
+    <Parameter Name="registry" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_DeviceDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_DeviceGralInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_devicemodel" Type="int" Mode="In" />
+    <Parameter Name="id_sim" Type="int" Mode="In" />
+    <Parameter Name="system_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="imei" Type="nvarchar" Mode="In" />
+    <Parameter Name="phone_number" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_DeviceGralUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="id_devicemodel" Type="int" Mode="In" />
+    <Parameter Name="id_sim" Type="int" Mode="In" />
+    <Parameter Name="system_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="imei" Type="nvarchar" Mode="In" />
+    <Parameter Name="phone_number" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_DeviceInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_vehicle" Type="int" Mode="In" />
+    <Parameter Name="id_company" Type="int" Mode="In" />
+    <Parameter Name="system_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="phone_number" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_DeviceUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_vehicle" Type="int" Mode="In" />
+    <Parameter Name="id_company" Type="int" Mode="In" />
+    <Parameter Name="system_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="phone_number" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_DriverInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="name" Type="nvarchar" Mode="In" />
+    <Parameter Name="surname" Type="nvarchar" Mode="In" />
+    <Parameter Name="id_company" Type="int" Mode="In" />
+    <Parameter Name="personal_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="phone_number" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_DriverUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="name" Type="nvarchar" Mode="In" />
+    <Parameter Name="surname" Type="nvarchar" Mode="In" />
+    <Parameter Name="id_company" Type="int" Mode="In" />
+    <Parameter Name="personal_id" Type="nvarchar" Mode="In" />
+    <Parameter Name="phone_number" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_FleetInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_company" Type="int" Mode="In" />
+    <Parameter Name="name" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_FleetUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="id_company" Type="int" Mode="In" />
+    <Parameter Name="name" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_PoiInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_company" Type="int" Mode="In" />
+    <Parameter Name="name" Type="nvarchar" Mode="In" />
+    <Parameter Name="lat" Type="float" Mode="In" />
+    <Parameter Name="lng" Type="float" Mode="In" />
+    <Parameter Name="rad" Type="int" Mode="In" />
+    <Parameter Name="type" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_PoiUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="name" Type="nvarchar" Mode="In" />
+    <Parameter Name="lat" Type="float" Mode="In" />
+    <Parameter Name="lng" Type="float" Mode="In" />
+    <Parameter Name="rad" Type="int" Mode="In" />
+    <Parameter Name="type" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_SimInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="operator" Type="nvarchar" Mode="In" />
+    <Parameter Name="number" Type="nvarchar" Mode="In" />
+    <Parameter Name="icc" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_SimSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_SimUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="operator" Type="nvarchar" Mode="In" />
+    <Parameter Name="number" Type="nvarchar" Mode="In" />
+    <Parameter Name="icc" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_UserFleetDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idUser" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_UserFleetInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idFleet" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_UserFleetSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="iduser" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_UserFleetUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="idUser" Type="int" Mode="In" />
+    <Parameter Name="idFleet" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_UserInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_usertype" Type="int" Mode="In" />
+    <Parameter Name="id_company" Type="int" Mode="In" />
+    <Parameter Name="id_language" Type="int" Mode="In" />
+    <Parameter Name="name" Type="nvarchar" Mode="In" />
+    <Parameter Name="login" Type="nvarchar" Mode="In" />
+    <Parameter Name="password" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_UserLoginApp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="login" Type="nvarchar" Mode="In" />
+    <Parameter Name="password" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_UserUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="id_usertype" Type="int" Mode="In" />
+    <Parameter Name="id_language" Type="int" Mode="In" />
+    <Parameter Name="name" Type="nvarchar" Mode="In" />
+    <Parameter Name="login" Type="nvarchar" Mode="In" />
+    <Parameter Name="password" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_VehicleDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_VehicleInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_company" Type="int" Mode="In" />
+    <Parameter Name="id_fleet" Type="int" Mode="In" />
+    <Parameter Name="id_vehicletype" Type="int" Mode="In" />
+    <Parameter Name="id_driver" Type="int" Mode="In" />
+    <Parameter Name="name" Type="nvarchar" Mode="In" />
+    <Parameter Name="make" Type="nvarchar" Mode="In" />
+    <Parameter Name="model" Type="nvarchar" Mode="In" />
+    <Parameter Name="year" Type="int" Mode="In" />
+    <Parameter Name="plate" Type="nvarchar" Mode="In" />
+    <Parameter Name="odometer" Type="float" Mode="In" />
+    <Parameter Name="color" Type="nvarchar" Mode="In" />
+    <Parameter Name="chassis_number" Type="nvarchar" Mode="In" />
+    <Parameter Name="factory_color" Type="nvarchar" Mode="In" />
+    <Parameter Name="installation_date_time" Type="datetime2" Mode="In" />
+  </Function>
+  <Function Name="sp_VehiclePoiDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_vehicle" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_VehiclePoiInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_vehicle" Type="int" Mode="In" />
+    <Parameter Name="id_poi" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_VehiclePoiSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_VehicleSecRouteAsign" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_company" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_VehicleSecRouteInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_srv" Type="int" Mode="In" />
+    <Parameter Name="id_sr" Type="int" Mode="In" />
+    <Parameter Name="id_vehicle" Type="int" Mode="In" />
+    <Parameter Name="time_control" Type="bit" Mode="In" />
+    <Parameter Name="start_time" Type="datetime" Mode="In" />
+    <Parameter Name="end_time" Type="datetime" Mode="In" />
+    <Parameter Name="stop_control" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="sp_VehicleSecRoutePermitida" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_vehicle" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_VehicleSecRouteUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_srv" Type="int" Mode="In" />
+    <Parameter Name="id_sr" Type="int" Mode="In" />
+    <Parameter Name="id_vehicle" Type="int" Mode="In" />
+    <Parameter Name="time_control" Type="bit" Mode="In" />
+    <Parameter Name="start_time" Type="datetime" Mode="In" />
+    <Parameter Name="end_time" Type="datetime" Mode="In" />
+    <Parameter Name="stop_control" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="sp_VehicleUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="id_company" Type="int" Mode="In" />
+    <Parameter Name="id_fleet" Type="int" Mode="In" />
+    <Parameter Name="id_vehicletype" Type="int" Mode="In" />
+    <Parameter Name="id_driver" Type="int" Mode="In" />
+    <Parameter Name="name" Type="nvarchar" Mode="In" />
+    <Parameter Name="make" Type="nvarchar" Mode="In" />
+    <Parameter Name="model" Type="nvarchar" Mode="In" />
+    <Parameter Name="year" Type="int" Mode="In" />
+    <Parameter Name="plate" Type="nvarchar" Mode="In" />
+    <Parameter Name="odometer" Type="float" Mode="In" />
+    <Parameter Name="color" Type="nvarchar" Mode="In" />
+    <Parameter Name="chassis_number" Type="nvarchar" Mode="In" />
+    <Parameter Name="factory_color" Type="nvarchar" Mode="In" />
+    <Parameter Name="installation_date_time" Type="datetime2" Mode="In" />
+  </Function>
+  <Function Name="sp_VehicleWeekDayDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_VehicleWeekDayInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_vehicle" Type="int" Mode="In" />
+    <Parameter Name="id_weekday" Type="int" Mode="In" />
+    <Parameter Name="allowed" Type="tinyint" Mode="In" />
+  </Function>
+  <Function Name="sp_VehicleWeekDayUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_vehicle" Type="int" Mode="In" />
+    <Parameter Name="id_weekday" Type="int" Mode="In" />
+    <Parameter Name="allowed" Type="tinyint" Mode="In" />
+  </Function>
+  <EntityContainer Name="CarFleetModelStoreContainer">
+    <EntitySet Name="Company" EntityType="Self.Company" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CompanyType" EntityType="Self.CompanyType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DefaultMaintenanceOperation" EntityType="Self.DefaultMaintenanceOperation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Device" EntityType="Self.Device" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Device_Services" EntityType="Self.Device_Services" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DeviceModel" EntityType="Self.DeviceModel" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DeviceStatus" EntityType="Self.DeviceStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Driver" EntityType="Self.Driver" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DrivingRulesConfiguration" EntityType="Self.DrivingRulesConfiguration" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Event" EntityType="Self.Event" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EventPolicy" EntityType="Self.EventPolicy" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EventType" EntityType="Self.EventType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Fleet" EntityType="Self.Fleet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Fleet_FleetFeatures" EntityType="Self.Fleet_FleetFeatures" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FleetFeatures" EntityType="Self.FleetFeatures" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GangwayServiceFrames" EntityType="Self.GangwayServiceFrames" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Language" EntityType="Self.Language" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MainData" EntityType="Self.MainData" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MaintenanceOperation" EntityType="Self.MaintenanceOperation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MaintenanceOperation_Company" EntityType="Self.MaintenanceOperation_Company" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MaintenanceOperation_Vehicle" EntityType="Self.MaintenanceOperation_Vehicle" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PendingCommand" EntityType="Self.PendingCommand" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PlatformServices" EntityType="Self.PlatformServices" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Poi" EntityType="Self.Poi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Point" EntityType="Self.Point" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PoiType" EntityType="Self.PoiType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Polygon" EntityType="Self.Polygon" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Polygon_Point" EntityType="Self.Polygon_Point" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Route" EntityType="Self.Route" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SecurityRoute" EntityType="Self.SecurityRoute" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SecurityRoute_Point" EntityType="Self.SecurityRoute_Point" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SecurityRoute_Vehicle" EntityType="Self.SecurityRoute_Vehicle" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Services" EntityType="Self.Services" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sim" EntityType="Self.Sim" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TimeZones" EntityType="Self.TimeZones" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User_Fleet" EntityType="Self.User_Fleet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserLogin" EntityType="Self.UserLogin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserType" EntityType="Self.UserType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vehicle" EntityType="Self.Vehicle" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vehicle_Poi" EntityType="Self.Vehicle_Poi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vehicle_WeekDay" EntityType="Self.Vehicle_WeekDay" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VehicleType" EntityType="Self.VehicleType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WeekDay" EntityType="Self.WeekDay" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Company_Company" Association="Self.FK_Company_Company">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="Company1" EntitySet="Company" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Company_CompanyType" Association="Self.FK_Company_CompanyType">
+      <End Role="CompanyType" EntitySet="CompanyType" />
+      <End Role="Company" EntitySet="Company" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Company_DrivingRulesConfiguration" Association="Self.FK_Company_DrivingRulesConfiguration">
+      <End Role="DrivingRulesConfiguration" EntitySet="DrivingRulesConfiguration" />
+      <End Role="Company" EntitySet="Company" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Company_PlatformServices" Association="Self.FK_Company_PlatformServices">
+      <End Role="PlatformServices" EntitySet="PlatformServices" />
+      <End Role="Company" EntitySet="Company" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Device_Company" Association="Self.FK_Device_Company">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="Device" EntitySet="Device" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Device_DeviceModel" Association="Self.FK_Device_DeviceModel">
+      <End Role="DeviceModel" EntitySet="DeviceModel" />
+      <End Role="Device" EntitySet="Device" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Device_Services_Device" Association="Self.FK_Device_Services_Device">
+      <End Role="Device" EntitySet="Device" />
+      <End Role="Device_Services" EntitySet="Device_Services" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Device_Services_Services" Association="Self.FK_Device_Services_Services">
+      <End Role="Services" EntitySet="Services" />
+      <End Role="Device_Services" EntitySet="Device_Services" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Device_Sim" Association="Self.FK_Device_Sim">
+      <End Role="Sim" EntitySet="Sim" />
+      <End Role="Device" EntitySet="Device" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Device_Vehicle" Association="Self.FK_Device_Vehicle">
+      <End Role="Vehicle" EntitySet="Vehicle" />
+      <End Role="Device" EntitySet="Device" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DeviceStatus_Device" Association="Self.FK_DeviceStatus_Device">
+      <End Role="Device" EntitySet="Device" />
+      <End Role="DeviceStatus" EntitySet="DeviceStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Driver_Company" Association="Self.FK_Driver_Company">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="Driver" EntitySet="Driver" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Event_Device" Association="Self.FK_Event_Device">
+      <End Role="Device" EntitySet="Device" />
+      <End Role="Event" EntitySet="Event" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Event_DeviceStatus" Association="Self.FK_Event_DeviceStatus">
+      <End Role="DeviceStatus" EntitySet="DeviceStatus" />
+      <End Role="Event" EntitySet="Event" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Event_EventType" Association="Self.FK_Event_EventType">
+      <End Role="EventType" EntitySet="EventType" />
+      <End Role="Event" EntitySet="Event" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EventPolicy_EventType" Association="Self.FK_EventPolicy_EventType">
+      <End Role="EventType" EntitySet="EventType" />
+      <End Role="EventPolicy" EntitySet="EventPolicy" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EventPolicy_User" Association="Self.FK_EventPolicy_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="EventPolicy" EntitySet="EventPolicy" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fleet_Company" Association="Self.FK_Fleet_Company">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="Fleet" EntitySet="Fleet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fleet_FleetFeatures_Fleet" Association="Self.FK_Fleet_FleetFeatures_Fleet">
+      <End Role="Fleet" EntitySet="Fleet" />
+      <End Role="Fleet_FleetFeatures" EntitySet="Fleet_FleetFeatures" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fleet_FleetFeatures_FleetFeatures" Association="Self.FK_Fleet_FleetFeatures_FleetFeatures">
+      <End Role="FleetFeatures" EntitySet="FleetFeatures" />
+      <End Role="Fleet_FleetFeatures" EntitySet="Fleet_FleetFeatures" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GangwayServiceFrames_Services" Association="Self.FK_GangwayServiceFrames_Services">
+      <End Role="Services" EntitySet="Services" />
+      <End Role="GangwayServiceFrames" EntitySet="GangwayServiceFrames" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MaintenanceOperation_Company_Company" Association="Self.FK_MaintenanceOperation_Company_Company">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="MaintenanceOperation_Company" EntitySet="MaintenanceOperation_Company" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MaintenanceOperation_Company_MaintenanceOperation" Association="Self.FK_MaintenanceOperation_Company_MaintenanceOperation">
+      <End Role="MaintenanceOperation" EntitySet="MaintenanceOperation" />
+      <End Role="MaintenanceOperation_Company" EntitySet="MaintenanceOperation_Company" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MaintenanceOperation_Vehicle_MaintenanceOperation" Association="Self.FK_MaintenanceOperation_Vehicle_MaintenanceOperation">
+      <End Role="MaintenanceOperation" EntitySet="MaintenanceOperation" />
+      <End Role="MaintenanceOperation_Vehicle" EntitySet="MaintenanceOperation_Vehicle" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MaintenanceOperation_Vehicle_Vehicle" Association="Self.FK_MaintenanceOperation_Vehicle_Vehicle">
+      <End Role="Vehicle" EntitySet="Vehicle" />
+      <End Role="MaintenanceOperation_Vehicle" EntitySet="MaintenanceOperation_Vehicle" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PendingCommand_Device" Association="Self.FK_PendingCommand_Device">
+      <End Role="Device" EntitySet="Device" />
+      <End Role="PendingCommand" EntitySet="PendingCommand" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Poi_Company" Association="Self.FK_Poi_Company">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="Poi" EntitySet="Poi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Poi_PoiType" Association="Self.FK_Poi_PoiType">
+      <End Role="PoiType" EntitySet="PoiType" />
+      <End Role="Poi" EntitySet="Poi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Poi_Polygon" Association="Self.FK_Poi_Polygon">
+      <End Role="Polygon" EntitySet="Polygon" />
+      <End Role="Poi" EntitySet="Poi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Polygon_Point_Point" Association="Self.FK_Polygon_Point_Point">
+      <End Role="Point" EntitySet="Point" />
+      <End Role="Polygon_Point" EntitySet="Polygon_Point" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Polygon_Point_Polygon" Association="Self.FK_Polygon_Point_Polygon">
+      <End Role="Polygon" EntitySet="Polygon" />
+      <End Role="Polygon_Point" EntitySet="Polygon_Point" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Route_Device" Association="Self.FK_Route_Device">
+      <End Role="Device" EntitySet="Device" />
+      <End Role="Route" EntitySet="Route" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Route_DeviceStatusEnd" Association="Self.FK_Route_DeviceStatusEnd">
+      <End Role="DeviceStatus" EntitySet="DeviceStatus" />
+      <End Role="Route" EntitySet="Route" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Route_DeviceStatusStart" Association="Self.FK_Route_DeviceStatusStart">
+      <End Role="DeviceStatus" EntitySet="DeviceStatus" />
+      <End Role="Route" EntitySet="Route" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SecurityRoute_Company" Association="Self.FK_SecurityRoute_Company">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="SecurityRoute" EntitySet="SecurityRoute" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SecurityRoute_Point_Point" Association="Self.FK_SecurityRoute_Point_Point">
+      <End Role="Point" EntitySet="Point" />
+      <End Role="SecurityRoute_Point" EntitySet="SecurityRoute_Point" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SecurityRoute_Point_SecurityRoute" Association="Self.FK_SecurityRoute_Point_SecurityRoute">
+      <End Role="SecurityRoute" EntitySet="SecurityRoute" />
+      <End Role="SecurityRoute_Point" EntitySet="SecurityRoute_Point" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SecurityRoute_Vehicle_SecurityRoute" Association="Self.FK_SecurityRoute_Vehicle_SecurityRoute">
+      <End Role="SecurityRoute" EntitySet="SecurityRoute" />
+      <End Role="SecurityRoute_Vehicle" EntitySet="SecurityRoute_Vehicle" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SecurityRoute_Vehicle_SecurityRoute_Point" Association="Self.FK_SecurityRoute_Vehicle_SecurityRoute_Point">
+      <End Role="SecurityRoute_Point" EntitySet="SecurityRoute_Point" />
+      <End Role="SecurityRoute_Vehicle" EntitySet="SecurityRoute_Vehicle" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SecurityRoute_Vehicle_SecurityRoute_Point_Next_Stop" Association="Self.FK_SecurityRoute_Vehicle_SecurityRoute_Point_Next_Stop">
+      <End Role="SecurityRoute_Point" EntitySet="SecurityRoute_Point" />
+      <End Role="SecurityRoute_Vehicle" EntitySet="SecurityRoute_Vehicle" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SecurityRoute_Vehicle_Vehicle" Association="Self.FK_SecurityRoute_Vehicle_Vehicle">
+      <End Role="Vehicle" EntitySet="Vehicle" />
+      <End Role="SecurityRoute_Vehicle" EntitySet="SecurityRoute_Vehicle" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Company" Association="Self.FK_User_Company">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Fleet_Fleet" Association="Self.FK_User_Fleet_Fleet">
+      <End Role="Fleet" EntitySet="Fleet" />
+      <End Role="User_Fleet" EntitySet="User_Fleet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Fleet_User" Association="Self.FK_User_Fleet_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="User_Fleet" EntitySet="User_Fleet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Language" Association="Self.FK_User_Language">
+      <End Role="Language" EntitySet="Language" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_UserType" Association="Self.FK_User_UserType">
+      <End Role="UserType" EntitySet="UserType" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserLogin_User" Association="Self.FK_UserLogin_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="UserLogin" EntitySet="UserLogin" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vehicle_Company" Association="Self.FK_Vehicle_Company">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="Vehicle" EntitySet="Vehicle" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vehicle_Driver" Association="Self.FK_Vehicle_Driver">
+      <End Role="Driver" EntitySet="Driver" />
+      <End Role="Vehicle" EntitySet="Vehicle" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vehicle_Fleet" Association="Self.FK_Vehicle_Fleet">
+      <End Role="Fleet" EntitySet="Fleet" />
+      <End Role="Vehicle" EntitySet="Vehicle" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vehicle_Poi_Poi" Association="Self.FK_Vehicle_Poi_Poi">
+      <End Role="Poi" EntitySet="Poi" />
+      <End Role="Vehicle_Poi" EntitySet="Vehicle_Poi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vehicle_Poi_Vehicle" Association="Self.FK_Vehicle_Poi_Vehicle">
+      <End Role="Vehicle" EntitySet="Vehicle" />
+      <End Role="Vehicle_Poi" EntitySet="Vehicle_Poi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vehicle_VehicleType" Association="Self.FK_Vehicle_VehicleType">
+      <End Role="VehicleType" EntitySet="VehicleType" />
+      <End Role="Vehicle" EntitySet="Vehicle" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vehicle_WeekDay_Vehicle" Association="Self.FK_Vehicle_WeekDay_Vehicle">
+      <End Role="Vehicle" EntitySet="Vehicle" />
+      <End Role="Vehicle_WeekDay" EntitySet="Vehicle_WeekDay" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vehicle_WeekDay_WeekDay" Association="Self.FK_Vehicle_WeekDay_WeekDay">
+      <End Role="WeekDay" EntitySet="WeekDay" />
+      <End Role="Vehicle_WeekDay" EntitySet="Vehicle_WeekDay" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

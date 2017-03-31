@@ -1,0 +1,494 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CarFleetModelStoreContainer" CdmEntityContainer="CarFleetEntities">
+    <EntitySetMapping Name="Companies">
+      <EntityTypeMapping TypeName="CarFleetModel.Company">
+        <MappingFragment StoreEntitySet="Company">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id_companytype" ColumnName="id_companytype" />
+          <ScalarProperty Name="id_company" ColumnName="id_company" />
+          <ScalarProperty Name="cif" ColumnName="cif" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="phone_number" ColumnName="phone_number" />
+          <ScalarProperty Name="fax_number" ColumnName="fax_number" />
+          <ScalarProperty Name="email_address" ColumnName="email_address" />
+          <ScalarProperty Name="registry_date_time" ColumnName="registry_date_time" />
+          <ScalarProperty Name="map_address" ColumnName="map_address" />
+          <ScalarProperty Name="events_email_address" ColumnName="events_email_address" />
+          <ScalarProperty Name="id_drivingrulesconfiguration" ColumnName="id_drivingrulesconfiguration" />
+          <ScalarProperty Name="id_platform_service" ColumnName="id_platform_service" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CompanyTypes">
+      <EntityTypeMapping TypeName="CarFleetModel.CompanyType">
+        <MappingFragment StoreEntitySet="CompanyType">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="company_category" ColumnName="company_category" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DefaultMaintenanceOperations">
+      <EntityTypeMapping TypeName="CarFleetModel.DefaultMaintenanceOperation">
+        <MappingFragment StoreEntitySet="DefaultMaintenanceOperation">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Devices">
+      <EntityTypeMapping TypeName="CarFleetModel.Device">
+        <MappingFragment StoreEntitySet="Device">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_vehicle" ColumnName="id_vehicle" />
+          <ScalarProperty Name="id_company" ColumnName="id_company" />
+          <ScalarProperty Name="id_devicemodel" ColumnName="id_devicemodel" />
+          <ScalarProperty Name="id_sim" ColumnName="id_sim" />
+          <ScalarProperty Name="system_id" ColumnName="system_id" />
+          <ScalarProperty Name="IMEI" ColumnName="IMEI" />
+          <ScalarProperty Name="phone_number" ColumnName="phone_number" />
+          <ScalarProperty Name="ip_address" ColumnName="ip_address" />
+          <ScalarProperty Name="ip_port" ColumnName="ip_port" />
+          <ScalarProperty Name="keep_alive_date_time" ColumnName="keep_alive_date_time" />
+          <ScalarProperty Name="location_string" ColumnName="location_string" />
+          <ScalarProperty Name="gps_date_time" ColumnName="gps_date_time" />
+          <ScalarProperty Name="latitude" ColumnName="latitude" />
+          <ScalarProperty Name="longitude" ColumnName="longitude" />
+          <ScalarProperty Name="fix_quality" ColumnName="fix_quality" />
+          <ScalarProperty Name="satellites_in_use" ColumnName="satellites_in_use" />
+          <ScalarProperty Name="satellites_in_view" ColumnName="satellites_in_view" />
+          <ScalarProperty Name="hdop" ColumnName="hdop" />
+          <ScalarProperty Name="vdop" ColumnName="vdop" />
+          <ScalarProperty Name="pdop" ColumnName="pdop" />
+          <ScalarProperty Name="altitude" ColumnName="altitude" />
+          <ScalarProperty Name="course" ColumnName="course" />
+          <ScalarProperty Name="speed" ColumnName="speed" />
+          <ScalarProperty Name="activity" ColumnName="activity" />
+          <ScalarProperty Name="total_gps_odometer" ColumnName="total_gps_odometer" />
+          <ScalarProperty Name="partial_gps_odometer" ColumnName="partial_gps_odometer" />
+          <ScalarProperty Name="engine_state" ColumnName="engine_state" />
+          <ScalarProperty Name="gpdi_1" ColumnName="gpdi_1" />
+          <ScalarProperty Name="gpdi_2" ColumnName="gpdi_2" />
+          <ScalarProperty Name="gpdi_3" ColumnName="gpdi_3" />
+          <ScalarProperty Name="gpdi_4" ColumnName="gpdi_4" />
+          <ScalarProperty Name="gpai_1" ColumnName="gpai_1" />
+          <ScalarProperty Name="gpai_2" ColumnName="gpai_2" />
+          <ScalarProperty Name="location_source" ColumnName="location_source" />
+          <ScalarProperty Name="battery_level" ColumnName="battery_level" />
+          <ScalarProperty Name="battery_charging" ColumnName="battery_charging" />
+          <ScalarProperty Name="activity_time" ColumnName="activity_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DeviceModels">
+      <EntityTypeMapping TypeName="CarFleetModel.DeviceModel">
+        <MappingFragment StoreEntitySet="DeviceModel">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="manufacturer" ColumnName="manufacturer" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DeviceStatus">
+      <EntityTypeMapping TypeName="CarFleetModel.DeviceStatu">
+        <MappingFragment StoreEntitySet="DeviceStatus">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_device" ColumnName="id_device" />
+          <ScalarProperty Name="ip_address" ColumnName="ip_address" />
+          <ScalarProperty Name="ip_port" ColumnName="ip_port" />
+          <ScalarProperty Name="reception_date_time" ColumnName="reception_date_time" />
+          <ScalarProperty Name="gps_date_time" ColumnName="gps_date_time" />
+          <ScalarProperty Name="location_string" ColumnName="location_string" />
+          <ScalarProperty Name="latitude" ColumnName="latitude" />
+          <ScalarProperty Name="longitude" ColumnName="longitude" />
+          <ScalarProperty Name="fix_quality" ColumnName="fix_quality" />
+          <ScalarProperty Name="satellites_in_use" ColumnName="satellites_in_use" />
+          <ScalarProperty Name="satellites_in_view" ColumnName="satellites_in_view" />
+          <ScalarProperty Name="hdop" ColumnName="hdop" />
+          <ScalarProperty Name="vdop" ColumnName="vdop" />
+          <ScalarProperty Name="pdop" ColumnName="pdop" />
+          <ScalarProperty Name="altitude" ColumnName="altitude" />
+          <ScalarProperty Name="course" ColumnName="course" />
+          <ScalarProperty Name="speed" ColumnName="speed" />
+          <ScalarProperty Name="activity" ColumnName="activity" />
+          <ScalarProperty Name="total_gps_odometer" ColumnName="total_gps_odometer" />
+          <ScalarProperty Name="partial_gps_odometer" ColumnName="partial_gps_odometer" />
+          <ScalarProperty Name="engine_state" ColumnName="engine_state" />
+          <ScalarProperty Name="gpdi_1" ColumnName="gpdi_1" />
+          <ScalarProperty Name="gpdi_2" ColumnName="gpdi_2" />
+          <ScalarProperty Name="gpdi_3" ColumnName="gpdi_3" />
+          <ScalarProperty Name="gpdi_4" ColumnName="gpdi_4" />
+          <ScalarProperty Name="gpai_1" ColumnName="gpai_1" />
+          <ScalarProperty Name="gpai_2" ColumnName="gpai_2" />
+          <ScalarProperty Name="location_source" ColumnName="location_source" />
+          <ScalarProperty Name="battery_level" ColumnName="battery_level" />
+          <ScalarProperty Name="activity_time" ColumnName="activity_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Drivers">
+      <EntityTypeMapping TypeName="CarFleetModel.Driver">
+        <MappingFragment StoreEntitySet="Driver">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="surname" ColumnName="surname" />
+          <ScalarProperty Name="id_company" ColumnName="id_company" />
+          <ScalarProperty Name="personal_id" ColumnName="personal_id" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="phone_number" ColumnName="phone_number" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DrivingRulesConfigurations">
+      <EntityTypeMapping TypeName="CarFleetModel.DrivingRulesConfiguration">
+        <MappingFragment StoreEntitySet="DrivingRulesConfiguration">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="speed_limit" ColumnName="speed_limit" />
+          <ScalarProperty Name="daily_driving_time_limit" ColumnName="daily_driving_time_limit" />
+          <ScalarProperty Name="daily_minimum_driving_time" ColumnName="daily_minimum_driving_time" />
+          <ScalarProperty Name="daily_distance_limit" ColumnName="daily_distance_limit" />
+          <ScalarProperty Name="daily_minimum_distance" ColumnName="daily_minimum_distance" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Events">
+      <EntityTypeMapping TypeName="CarFleetModel.Event">
+        <MappingFragment StoreEntitySet="Event">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_device" ColumnName="id_device" />
+          <ScalarProperty Name="id_devicestatus" ColumnName="id_devicestatus" />
+          <ScalarProperty Name="id_eventtype" ColumnName="id_eventtype" />
+          <ScalarProperty Name="reception_date_time" ColumnName="reception_date_time" />
+          <ScalarProperty Name="id_parameter" ColumnName="id_parameter" />
+          <ScalarProperty Name="email_sent" ColumnName="email_sent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EventPolicies">
+      <EntityTypeMapping TypeName="CarFleetModel.EventPolicy">
+        <MappingFragment StoreEntitySet="EventPolicy">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_event_type" ColumnName="id_event_type" />
+          <ScalarProperty Name="e_mail" ColumnName="e_mail" />
+          <ScalarProperty Name="id_user" ColumnName="id_user" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EventTypes">
+      <EntityTypeMapping TypeName="CarFleetModel.EventType">
+        <MappingFragment StoreEntitySet="EventType">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fleets">
+      <EntityTypeMapping TypeName="CarFleetModel.Fleet">
+        <MappingFragment StoreEntitySet="Fleet">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_company" ColumnName="id_company" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="image" ColumnName="image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Languages">
+      <EntityTypeMapping TypeName="CarFleetModel.Language">
+        <MappingFragment StoreEntitySet="Language">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="hashkey" ColumnName="hashkey" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MainDatas">
+      <EntityTypeMapping TypeName="CarFleetModel.MainData">
+        <MappingFragment StoreEntitySet="MainData">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="server_ip_address" ColumnName="server_ip_address" />
+          <ScalarProperty Name="platform_name" ColumnName="platform_name" />
+          <ScalarProperty Name="events_mail_sender" ColumnName="events_mail_sender" />
+          <ScalarProperty Name="host" ColumnName="host" />
+          <ScalarProperty Name="port" ColumnName="port" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MaintenanceOperations">
+      <EntityTypeMapping TypeName="CarFleetModel.MaintenanceOperation">
+        <MappingFragment StoreEntitySet="MaintenanceOperation">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MaintenanceOperation_Company">
+      <EntityTypeMapping TypeName="CarFleetModel.MaintenanceOperation_Company">
+        <MappingFragment StoreEntitySet="MaintenanceOperation_Company">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_company" ColumnName="id_company" />
+          <ScalarProperty Name="id_maintenanceoperation" ColumnName="id_maintenanceoperation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MaintenanceOperation_Vehicle">
+      <EntityTypeMapping TypeName="CarFleetModel.MaintenanceOperation_Vehicle">
+        <MappingFragment StoreEntitySet="MaintenanceOperation_Vehicle">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_vehicle" ColumnName="id_vehicle" />
+          <ScalarProperty Name="id_maintenanceoperation" ColumnName="id_maintenanceoperation" />
+          <ScalarProperty Name="distance_notification" ColumnName="distance_notification" />
+          <ScalarProperty Name="time_notification" ColumnName="time_notification" />
+          <ScalarProperty Name="current_distance" ColumnName="current_distance" />
+          <ScalarProperty Name="starting_time" ColumnName="starting_time" />
+          <ScalarProperty Name="maintenance_performed" ColumnName="maintenance_performed" />
+          <ScalarProperty Name="performing_time" ColumnName="performing_time" />
+          <ScalarProperty Name="notification_sent" ColumnName="notification_sent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PendingCommands">
+      <EntityTypeMapping TypeName="CarFleetModel.PendingCommand">
+        <MappingFragment StoreEntitySet="PendingCommand">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_device" ColumnName="id_device" />
+          <ScalarProperty Name="command" ColumnName="command" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PlatformServices">
+      <EntityTypeMapping TypeName="CarFleetModel.PlatformService">
+        <MappingFragment StoreEntitySet="PlatformServices">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pois">
+      <EntityTypeMapping TypeName="CarFleetModel.Poi">
+        <MappingFragment StoreEntitySet="Poi">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_poitype" ColumnName="id_poitype" />
+          <ScalarProperty Name="id_company" ColumnName="id_company" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="latitude" ColumnName="latitude" />
+          <ScalarProperty Name="longitude" ColumnName="longitude" />
+          <ScalarProperty Name="notes" ColumnName="notes" />
+          <ScalarProperty Name="radius" ColumnName="radius" />
+          <ScalarProperty Name="id_polygon" ColumnName="id_polygon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Points">
+      <EntityTypeMapping TypeName="CarFleetModel.Point">
+        <MappingFragment StoreEntitySet="Point">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="latitude" ColumnName="latitude" />
+          <ScalarProperty Name="longitude" ColumnName="longitude" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PoiTypes">
+      <EntityTypeMapping TypeName="CarFleetModel.PoiType">
+        <MappingFragment StoreEntitySet="PoiType">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="image" ColumnName="image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Polygons">
+      <EntityTypeMapping TypeName="CarFleetModel.Polygon">
+        <MappingFragment StoreEntitySet="Polygon">
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Polygon_Point">
+      <EntityTypeMapping TypeName="CarFleetModel.Polygon_Point">
+        <MappingFragment StoreEntitySet="Polygon_Point">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_polygon" ColumnName="id_polygon" />
+          <ScalarProperty Name="id_point" ColumnName="id_point" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Routes">
+      <EntityTypeMapping TypeName="CarFleetModel.Route">
+        <MappingFragment StoreEntitySet="Route">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_device" ColumnName="id_device" />
+          <ScalarProperty Name="gps_date_time_start" ColumnName="gps_date_time_start" />
+          <ScalarProperty Name="gps_date_time_end" ColumnName="gps_date_time_end" />
+          <ScalarProperty Name="id_devicestatus_start" ColumnName="id_devicestatus_start" />
+          <ScalarProperty Name="id_devicestatus_end" ColumnName="id_devicestatus_end" />
+          <ScalarProperty Name="distance" ColumnName="distance" />
+          <ScalarProperty Name="average_speed" ColumnName="average_speed" />
+          <ScalarProperty Name="start_address" ColumnName="start_address" />
+          <ScalarProperty Name="end_address" ColumnName="end_address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SecurityRoutes">
+      <EntityTypeMapping TypeName="CarFleetModel.SecurityRoute">
+        <MappingFragment StoreEntitySet="SecurityRoute">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id_company" ColumnName="id_company" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SecurityRoute_Point">
+      <EntityTypeMapping TypeName="CarFleetModel.SecurityRoute_Point">
+        <MappingFragment StoreEntitySet="SecurityRoute_Point">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_securityroute" ColumnName="id_securityroute" />
+          <ScalarProperty Name="id_point" ColumnName="id_point" />
+          <ScalarProperty Name="route_point_order" ColumnName="route_point_order" />
+          <ScalarProperty Name="is_stop" ColumnName="is_stop" />
+          <ScalarProperty Name="stop_time" ColumnName="stop_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SecurityRoute_Vehicle">
+      <EntityTypeMapping TypeName="CarFleetModel.SecurityRoute_Vehicle">
+        <MappingFragment StoreEntitySet="SecurityRoute_Vehicle">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_securityroute" ColumnName="id_securityroute" />
+          <ScalarProperty Name="id_vehicle" ColumnName="id_vehicle" />
+          <ScalarProperty Name="time_control" ColumnName="time_control" />
+          <ScalarProperty Name="start_time" ColumnName="start_time" />
+          <ScalarProperty Name="end_time" ColumnName="end_time" />
+          <ScalarProperty Name="stop_control" ColumnName="stop_control" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="id_securityroute_point" ColumnName="id_securityroute_point" />
+          <ScalarProperty Name="start_delay_event_raised" ColumnName="start_delay_event_raised" />
+          <ScalarProperty Name="end_delay_event_raised" ColumnName="end_delay_event_raised" />
+          <ScalarProperty Name="id_securityroute_point_next_stop" ColumnName="id_securityroute_point_next_stop" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sims">
+      <EntityTypeMapping TypeName="CarFleetModel.Sim">
+        <MappingFragment StoreEntitySet="Sim">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="operator" ColumnName="operator" />
+          <ScalarProperty Name="number" ColumnName="number" />
+          <ScalarProperty Name="icc" ColumnName="icc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="CarFleetModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_usertype" ColumnName="id_usertype" />
+          <ScalarProperty Name="id_company" ColumnName="id_company" />
+          <ScalarProperty Name="id_language" ColumnName="id_language" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="sign_in_date" ColumnName="sign_in_date" />
+          <ScalarProperty Name="expiration_date" ColumnName="expiration_date" />
+          <ScalarProperty Name="events_email_address" ColumnName="events_email_address" />
+          <ScalarProperty Name="gcm_registration_id" ColumnName="gcm_registration_id" />
+          <ScalarProperty Name="gcm_registration_device" ColumnName="gcm_registration_device" />
+          <ScalarProperty Name="surname" ColumnName="surname" />
+          <ScalarProperty Name="validation_code" ColumnName="validation_code" />
+          <ScalarProperty Name="user_validated" ColumnName="user_validated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User_Fleet">
+      <EntityTypeMapping TypeName="CarFleetModel.User_Fleet">
+        <MappingFragment StoreEntitySet="User_Fleet">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_user" ColumnName="id_user" />
+          <ScalarProperty Name="id_fleet" ColumnName="id_fleet" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserLogins">
+      <EntityTypeMapping TypeName="CarFleetModel.UserLogin">
+        <MappingFragment StoreEntitySet="UserLogin">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_user" ColumnName="id_user" />
+          <ScalarProperty Name="login_date_time" ColumnName="login_date_time" />
+          <ScalarProperty Name="platform" ColumnName="platform" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserTypes">
+      <EntityTypeMapping TypeName="CarFleetModel.UserType">
+        <MappingFragment StoreEntitySet="UserType">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="user_category" ColumnName="user_category" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vehicles">
+      <EntityTypeMapping TypeName="CarFleetModel.Vehicle">
+        <MappingFragment StoreEntitySet="Vehicle">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_company" ColumnName="id_company" />
+          <ScalarProperty Name="id_fleet" ColumnName="id_fleet" />
+          <ScalarProperty Name="id_vehicletype" ColumnName="id_vehicletype" />
+          <ScalarProperty Name="id_driver" ColumnName="id_driver" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="make" ColumnName="make" />
+          <ScalarProperty Name="model" ColumnName="model" />
+          <ScalarProperty Name="year" ColumnName="year" />
+          <ScalarProperty Name="plate" ColumnName="plate" />
+          <ScalarProperty Name="odometer" ColumnName="odometer" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="color" ColumnName="color" />
+          <ScalarProperty Name="chassis_number" ColumnName="chassis_number" />
+          <ScalarProperty Name="factory_color" ColumnName="factory_color" />
+          <ScalarProperty Name="registry_date_time" ColumnName="registry_date_time" />
+          <ScalarProperty Name="installation_date_time" ColumnName="installation_date_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vehicle_Poi">
+      <EntityTypeMapping TypeName="CarFleetModel.Vehicle_Poi">
+        <MappingFragment StoreEntitySet="Vehicle_Poi">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_vehicle" ColumnName="id_vehicle" />
+          <ScalarProperty Name="id_poi" ColumnName="id_poi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vehicle_WeekDay">
+      <EntityTypeMapping TypeName="CarFleetModel.Vehicle_WeekDay">
+        <MappingFragment StoreEntitySet="Vehicle_WeekDay">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_vehicle" ColumnName="id_vehicle" />
+          <ScalarProperty Name="id_weekday" ColumnName="id_weekday" />
+          <ScalarProperty Name="allowed" ColumnName="allowed" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehicleTypes">
+      <EntityTypeMapping TypeName="CarFleetModel.VehicleType">
+        <MappingFragment StoreEntitySet="VehicleType">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="image" ColumnName="image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WeekDays">
+      <EntityTypeMapping TypeName="CarFleetModel.WeekDay">
+        <MappingFragment StoreEntitySet="WeekDay">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="day_name" ColumnName="day_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_CompanyInsert" FunctionName="CarFleetModel.Store.sp_CompanyInsert" />
+    <FunctionImportMapping FunctionImportName="sp_CompanyUpdate" FunctionName="CarFleetModel.Store.sp_CompanyUpdate" />
+    <FunctionImportMapping FunctionImportName="sp_FleetInsert" FunctionName="CarFleetModel.Store.sp_FleetInsert" />
+    <FunctionImportMapping FunctionImportName="sp_FleetUpdate" FunctionName="CarFleetModel.Store.sp_FleetUpdate" />
+  </EntityContainerMapping>
+</Mapping>

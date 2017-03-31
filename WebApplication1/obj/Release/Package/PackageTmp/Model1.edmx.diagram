@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5ac3cea690544e3997281f12f02e8cd6" Name="Diagram1">
+        <EntityTypeShape EntityType="CarFleetModel.Company" Width="1.5" PointX="3" PointY="22.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarFleetModel.CompanyType" Width="1.5" PointX="0.75" PointY="24.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarFleetModel.DefaultMaintenanceOperation" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarFleetModel.Device" Width="1.5" PointX="5.25" PointY="20.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarFleetModel.DeviceModel" Width="1.5" PointX="3" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarFleetModel.DeviceStatu" Width="1.5" PointX="7.5" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarFleetModel.Driver" Width="1.5" PointX="5.25" PointY="31.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarFleetModel.DrivingRulesConfiguration" Width="1.5" PointX="0.75" PointY="20.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarFleetModel.Event" Width="1.5" PointX="10.75" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarFleetModel.EventPolicy" Width="1.5" PointX="12.5" PointY="28.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarFleetModel.EventType" Width="1.5" PointX="8.5" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarFleetModel.Fleet" Width="1.5" PointX="5.25" PointY="35.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarFleetModel.Language" Width="1.5" PointX="8" PointY="49.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarFleetModel.MainData" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarFleetModel.MaintenanceOperation" Width="1.5" PointX="6" PointY="41.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarFleetModel.MaintenanceOperation_Company" Width="1.5" PointX="8.25" PointY="23.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarFleetModel.MaintenanceOperation_Vehicle" Width="1.5" PointX="9.75" PointY="33.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarFleetModel.PendingCommand" Width="1.5" PointX="7.5" PointY="38.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarFleetModel.PlatformService" Width="1.5" PointX="0.75" PointY="27" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarFleetModel.Poi" Width="1.5" PointX="8.25" PointY="18.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarFleetModel.Point" Width="1.5" PointX="5.25" PointY="48.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarFleetModel.PoiType" Width="1.5" PointX="6" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarFleetModel.Polygon" Width="1.5" PointX="6" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarFleetModel.Polygon_Point" Width="1.5" PointX="12.25" PointY="34.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarFleetModel.Route" Width="1.5" PointX="9.75" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarFleetModel.SecurityRoute" Width="1.5" PointX="5.25" PointY="45.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarFleetModel.SecurityRoute_Point" Width="1.5" PointX="7.5" PointY="45.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarFleetModel.SecurityRoute_Vehicle" Width="1.5" PointX="9.75" PointY="37.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarFleetModel.Sim" Width="1.5" PointX="3" PointY="29.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarFleetModel.User" Width="1.5" PointX="10.25" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarFleetModel.User_Fleet" Width="1.5" PointX="7.5" PointY="35.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarFleetModel.UserLogin" Width="1.5" PointX="12.5" PointY="31.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarFleetModel.UserType" Width="1.5" PointX="8" PointY="51.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarFleetModel.Vehicle" Width="1.5" PointX="7.5" PointY="27" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarFleetModel.Vehicle_Poi" Width="1.5" PointX="10.5" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarFleetModel.Vehicle_WeekDay" Width="1.5" PointX="12.75" PointY="24.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarFleetModel.VehicleType" Width="1.5" PointX="5.25" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarFleetModel.WeekDay" Width="1.5" PointX="10.5" PointY="11.25" IsExpanded="true" />
+        <AssociationConnector Association="CarFleetModel.FK_Company_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="CarFleetModel.FK_Company_CompanyType" ManuallyRouted="false" />
+        <AssociationConnector Association="CarFleetModel.FK_Company_DrivingRulesConfiguration" ManuallyRouted="false" />
+        <AssociationConnector Association="CarFleetModel.FK_Company_PlatformServices" ManuallyRouted="false" />
+        <AssociationConnector Association="CarFleetModel.FK_Device_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="CarFleetModel.FK_Driver_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="CarFleetModel.FK_Fleet_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="CarFleetModel.FK_MaintenanceOperation_Company_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="CarFleetModel.FK_Poi_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="CarFleetModel.FK_SecurityRoute_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="CarFleetModel.FK_User_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="CarFleetModel.FK_Vehicle_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="CarFleetModel.FK_Device_DeviceModel" ManuallyRouted="false" />
+        <AssociationConnector Association="CarFleetModel.FK_Device_Sim" ManuallyRouted="false" />
+        <AssociationConnector Association="CarFleetModel.FK_Device_Vehicle" ManuallyRouted="false" />
+        <AssociationConnector Association="CarFleetModel.FK_DeviceStatus_Device" ManuallyRouted="false" />
+        <AssociationConnector Association="CarFleetModel.FK_Event_Device" ManuallyRouted="false" />
+        <AssociationConnector Association="CarFleetModel.FK_PendingCommand_Device" ManuallyRouted="false" />
+        <AssociationConnector Association="CarFleetModel.FK_Route_Device" ManuallyRouted="false" />
+        <AssociationConnector Association="CarFleetModel.FK_Event_DeviceStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="CarFleetModel.FK_Route_DeviceStatusEnd" ManuallyRouted="false" />
+        <AssociationConnector Association="CarFleetModel.FK_Route_DeviceStatusStart" ManuallyRouted="false" />
+        <AssociationConnector Association="CarFleetModel.FK_Vehicle_Driver" ManuallyRouted="false" />
+        <AssociationConnector Association="CarFleetModel.FK_Event_EventType" ManuallyRouted="false" />
+        <AssociationConnector Association="CarFleetModel.FK_EventPolicy_EventType" ManuallyRouted="false" />
+        <AssociationConnector Association="CarFleetModel.FK_EventPolicy_User" ManuallyRouted="false" />
+        <AssociationConnector Association="CarFleetModel.FK_User_Fleet_Fleet" ManuallyRouted="false" />
+        <AssociationConnector Association="CarFleetModel.FK_Vehicle_Fleet" ManuallyRouted="false" />
+        <AssociationConnector Association="CarFleetModel.FK_User_Language" ManuallyRouted="false" />
+        <AssociationConnector Association="CarFleetModel.FK_MaintenanceOperation_Company_MaintenanceOperation" ManuallyRouted="false" />
+        <AssociationConnector Association="CarFleetModel.FK_MaintenanceOperation_Vehicle_MaintenanceOperation" ManuallyRouted="false" />
+        <AssociationConnector Association="CarFleetModel.FK_MaintenanceOperation_Vehicle_Vehicle" ManuallyRouted="false" />
+        <AssociationConnector Association="CarFleetModel.FK_Poi_PoiType" ManuallyRouted="false" />
+        <AssociationConnector Association="CarFleetModel.FK_Poi_Polygon" ManuallyRouted="false" />
+        <AssociationConnector Association="CarFleetModel.FK_Vehicle_Poi_Poi" ManuallyRouted="false" />
+        <AssociationConnector Association="CarFleetModel.FK_Polygon_Point_Point" ManuallyRouted="false" />
+        <AssociationConnector Association="CarFleetModel.FK_SecurityRoute_Point_Point" ManuallyRouted="false" />
+        <AssociationConnector Association="CarFleetModel.FK_Polygon_Point_Polygon" ManuallyRouted="false" />
+        <AssociationConnector Association="CarFleetModel.FK_SecurityRoute_Point_SecurityRoute" ManuallyRouted="false" />
+        <AssociationConnector Association="CarFleetModel.FK_SecurityRoute_Vehicle_SecurityRoute" ManuallyRouted="false" />
+        <AssociationConnector Association="CarFleetModel.FK_SecurityRoute_Vehicle_SecurityRoute_Point" ManuallyRouted="false" />
+        <AssociationConnector Association="CarFleetModel.FK_SecurityRoute_Vehicle_SecurityRoute_Point_Next_Stop" ManuallyRouted="false" />
+        <AssociationConnector Association="CarFleetModel.FK_SecurityRoute_Vehicle_Vehicle" ManuallyRouted="false" />
+        <AssociationConnector Association="CarFleetModel.FK_User_Fleet_User" ManuallyRouted="false" />
+        <AssociationConnector Association="CarFleetModel.FK_User_UserType" ManuallyRouted="false" />
+        <AssociationConnector Association="CarFleetModel.FK_UserLogin_User" ManuallyRouted="false" />
+        <AssociationConnector Association="CarFleetModel.FK_Vehicle_Poi_Vehicle" ManuallyRouted="false" />
+        <AssociationConnector Association="CarFleetModel.FK_Vehicle_VehicleType" ManuallyRouted="false" />
+        <AssociationConnector Association="CarFleetModel.FK_Vehicle_WeekDay_Vehicle" ManuallyRouted="false" />
+        <AssociationConnector Association="CarFleetModel.FK_Vehicle_WeekDay_WeekDay" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
